@@ -74,5 +74,5 @@ def enterData(field,data):
 
 if __name__ == "__main__":
     driver = webdriver.Chrome("C:/Users/Alex/Downloads/chromedriver_win32/chromedriver.exe")
-    driver.get('https://www.walmart.com/ip/PlayStation-5-Console/363472942') THIS IS THE PS5 LINK
+    driver.get('https://www.walmart.com/ip/PlayStation-5-Console/363472942')
     order()
