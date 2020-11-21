@@ -3,9 +3,9 @@ This is a bot that will buy a PS5 through Walmart. It's written in python and us
 
 
 ## Installments
-*[Python](https://www.python.org/)
-*[Selenium](https://selenium-python.readthedocs.io/installation.html)
-*[ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+* [Python](https://www.python.org/)
+* [Selenium](https://selenium-python.readthedocs.io/installation.html)
+* [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
 
 ## Before Running
 Before running the code, you have to change the values for your personal information. Make sure you change the varables with the spelling format myVariable. They should be pretty intuitive. 
