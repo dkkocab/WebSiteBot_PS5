@@ -22,11 +22,11 @@ def order():
 
     #KEYS
     #add your information here
-    myFirstName = 'Alex'
-    myLastName = 'Kocab'
-    myEmail = 'dkkocab@gmail.com'
-    myAddress = '5260 Old Hickory Dr'
-    myPhone = '2627947823'
+    myFirstName = 'John'
+    myLastName = 'Smith'
+    myEmail = 'mail@gmail.com'
+    myAddress = '1234 Apple Lane'
+    myPhone = '1234567890'
     myCreditCardNum = '123456789'
     myCreditExpireMonth = '00'
     myCreditExpireYear = '25'
