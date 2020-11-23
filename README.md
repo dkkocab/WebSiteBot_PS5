@@ -22,3 +22,4 @@ Download the WalmartBot.exe and run it. Your window's computer will say it's a d
 * Allow users to input their own link (if outside of the US)
 * Allow other browsers besides Chrome
 * Allow users to sign into said site if theres an account log in lock on purchases
+* Make official release
