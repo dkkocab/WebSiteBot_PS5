@@ -23,3 +23,4 @@ I decided to remove the release. Please just run the code on an IDE of your choi
 * Allow other browsers besides Chrome
 * Allow users to sign into said site if theres an account log in lock on purchases
 * Make official release
+* Make the address line include City, State, ZIP, and apartment number
