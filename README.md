@@ -13,7 +13,7 @@ Download the WalmartBot.exe and run it. Your window's computer will say it's a d
 * [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
 
 
-## Planned Updated
+## Planned Updates
 * Add Xbox
 * Refresh page 
 * Add more sites (Currently just walmart), next being Target?
