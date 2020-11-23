@@ -13,3 +13,12 @@ Download the WalmartBot.exe and run it. Your window's computer will say it's a d
 * [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
 
 
+## Planned Updated
+* Add Xbox
+* Refresh page 
+* Add more sites (Currently just walmart), next being Target?
+* Make better UI
+* Tell user that address and payment info is not necessary to run
+* Allow users to input their own link (if outside of the US)
+* Allow other browsers besides Chrome
+* Allow users to sign into said site if theres an account log in lock on purchases
