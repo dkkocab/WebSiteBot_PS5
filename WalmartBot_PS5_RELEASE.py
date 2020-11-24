@@ -4,11 +4,13 @@ import time
 from tkinter import Button, Frame, messagebox
 from functools import partial
 
-def order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV):
+def order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, myUsername, myPassword):
     #VARIABLES
     addToCart = '//*[@id="add-on-atc-container"]/div[1]/section/div[1]/div[3]/button/span/span'
     checkOut = '//*[@id="cart-root-container-content-skip"]/div[1]/div/div[2]/div/div/div/div/div[3]/div/div/div[2]/div/div[2]/div/button[1]'
-    continueWithoutAccount = '/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[1]/div/div/div/div/div[3]/div/div[1]/div/section/section/div/button/span'
+    username = '//*[@id="sign-in-email"]'
+    password = '/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[1]/div/div/div/div/div[3]/div/div[4]/div/section/div/section/form/div[2]/div/div[1]/label/div[2]/div/input'
+    continueWithAccount = '/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[1]/div/div/div/div/div[3]/div/div[4]/div/section/div/section/form/div[5]/button/span'
     firstContinue = '/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[2]/div/div[2]/div/div/div/div[3]/div/div/div[2]/button/span'
     firstName ='//*[@id="firstName"]'
     lastName = '//*[@id="lastName"]'
@@ -28,7 +30,9 @@ def order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNu
     time.sleep(1)
     clickButton(checkOut, driver)
     time.sleep(1)
-    clickButton(continueWithoutAccount, driver)
+    enterData(username, myUsername.get(), driver)
+    enterData(password, myPassword.get(), driver)
+    clickButton(continueWithAccount, driver)
     time.sleep(1)
 
     #FILLS OUT SHIPPING INFO
@@ -75,41 +79,41 @@ def enterData(field,data ,driver):
         time.sleep(1)
         enterData(field,data, driver)
 
-def PlayStationDigital(myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, supplier):
+def PlayStationDigital(myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, supplier, myUsername, myPassword):
     messagebox.showinfo('Message', 'Bot has been turned on. Press "Okay" to continue and the Playstation bot will run. This application may stop responding as it runs, but it will continue to run the scripts')
     if supplier == "Walmart":
         driver = webdriver.Chrome("C:/Users/Alex/Downloads/chromedriver_win32/chromedriver.exe")
         driver.get('https://www.walmart.com/ip/Sony-PlayStation-5-Digital-Edition/493824815')
-        order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV)
+        order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, myUsername, myPassword)
 
-def PlayStationPhysical(myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, supplier):
+def PlayStationPhysical(myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, supplier, myUsername, myPassword):
     messagebox.showinfo('Message', 'Bot has been turned on. Press "Okay" to continue and the Playstation bot will run. This application may stop responding as it runs, but it will continue to run the scripts')
     if supplier == "Walmart":
         driver = webdriver.Chrome("C:/Users/Alex/Downloads/chromedriver_win32/chromedriver.exe")
         driver.get('https://www.walmart.com/ip/PlayStation-5-Console/363472942')
-        order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV)
+        order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, myUsername, myPassword)
         root.mainloop()
 
-def XboxX(myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, supplier):
+def XboxX(myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, supplier, myUsername, myPassword):
     messagebox.showinfo('Message', 'Bot has been turned on. Press "Okay" to continue and the Xbox bot will run. This application may stop responding as it runs, but it will continue to run the scripts')
     if supplier == "Walmart":
         driver = webdriver.Chrome("C:/Users/Alex/Downloads/chromedriver_win32/chromedriver.exe")
         driver.get('https://www.walmart.com/ip/XB1-Xbox-Series-X/443574645')
-        order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, supplier)
+        order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, supplier, myUsername, myPassword)
         root.mainloop()
 
-def XboxS(myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, supplier):
+def XboxS(myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, supplier, myUsername, myPassword):
     messagebox.showinfo('Message', 'Bot has been turned on. Press "Okay" to continue and the Xbox bot will run. This application may stop responding as it runs, but it will continue to run the scripts')
     if supplier == "Walmart":
         driver = webdriver.Chrome("C:/Users/Alex/Downloads/chromedriver_win32/chromedriver.exe")
         driver.get('https://www.walmart.com/ip/XB1-Xbox-Series-S/606518560')
-        order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV)
+        order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, myUsername, myPassword)
         root.mainloop()
 
 def form(console,supplier):
     root = tkinter.Tk()
     root.title("Kocab's PlayStation Bot")
-    root.geometry("1000x500")
+    root.geometry("1000x600")
     greeting = tkinter.Label(root, text="*This information isn't needed to run the code. Filling out this information will automate the whole purchase. Leave it blank and it will go to the end of the transcation where you can finish the rest manually*",wraplength=700)
     greeting.grid(column = 0, row = 0)
 
@@ -168,22 +172,35 @@ def form(console,supplier):
     CVVEntered = tkinter.Entry(root, width=5, textvariable = myCVV)
     CVVEntered.grid(column = 1, row = 50,padx=10, pady=10)
 
+    lableUser = tkinter.Label(root, text="Account Username/Email: ")
+    lableUser.grid(column = 0, row = 55, pady=10)
+    myUsername = tkinter.StringVar()
+    userEntered = tkinter.Entry(root, width=25, textvariable = myUsername)
+    userEntered.grid(column = 1, row = 55, pady=10)
+
+    lablePassword = tkinter.Label(root, text="Password: ")
+    lablePassword.grid(column = 0, row = 60 ,pady=10)
+    myPassword = tkinter.StringVar()
+    passwordEntered = tkinter.Entry(root, width=25, textvariable = myPassword)
+    passwordEntered.grid(column = 1, row = 60,padx=10, pady=10)
+
     if console == "PS":
         if supplier == "Walmart":
-            ps5P = Button(root, text="Playstation Physical", command= partial(PlayStationPhysical ,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, "Walmart"))
-            ps5D = Button(root, text="Playstation Digital", command= partial(PlayStationDigital ,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, "Walmart"))
-            ps5P.grid(column = 0, row = 55)
-            ps5D.grid(column = 1, row = 55)
+            ps5P = Button(root, text="Playstation Physical", command= partial(PlayStationPhysical ,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, "Walmart", myUsername, myPassword))
+            ps5D = Button(root, text="Playstation Digital", command= partial(PlayStationDigital ,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, "Walmart", myUsername, myPassword))
+            ps5P.grid(column = 0, row = 65)
+            ps5D.grid(column = 1, row = 65)
             root.mainloop()
 
     if console == "XB":
-        if supplier == "Walmart":
-            ps5P = Button(root, text="Xbox Series X", command= partial(XboxX ,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, "Walmart"))
-            ps5D = Button(root, text="Xbox Series S", command= partial(XboxS ,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, "Walmart"))
-            ps5P.grid(column = 0, row = 55)
-            ps5D.grid(column = 1, row = 55)
-            root.mainloop()
+        ps5P = Button(root, text="Xbox Series X", command= partial(XboxX ,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, "Walmart", myUsername, myPassword))
+        ps5D = Button(root, text="Xbox Series S", command= partial(XboxS ,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, "Walmart", myUsername, myPassword))
+        ps5P.grid(column = 0, row = 65)
+        ps5D.grid(column = 1, row = 65)
+        root.mainloop()
         
+        
+
 def PlayStation():
     root = tkinter.Tk()
     root.title("Kocab's PlayStation Bot")
@@ -193,7 +210,8 @@ def PlayStation():
     ps5Start = Button(root, text="Walmart", command= partial(form, "PS" ,"Walmart"))
     ps5Start.pack()
     root.mainloop()
-    
+
+
 def Xbox():
     root = tkinter.Tk()
     root.title("Kocab's PlayStation Bot")
@@ -203,6 +221,7 @@ def Xbox():
     ps5Start = Button(root, text="Walmart", command= partial(form, "XB", "Walmart"))
     ps5Start.pack()
     root.mainloop()
+
 
 if __name__ == "__main__":   
     root = tkinter.Tk()
@@ -217,3 +236,4 @@ if __name__ == "__main__":
     ps5Start.grid(column = 25, row = 6)
     xboxStart.grid(column = 25, row = 8)
     root.mainloop()
+    
