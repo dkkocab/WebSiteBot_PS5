@@ -1,10 +1,26 @@
-from selenium import webdriver
+import os
 import time
 
-class PS5Bot:
+from selenium import webdriver
+
+
+
+class WebsiteBot:
     
-    def __init__(self, first_name, last_name, email, address, phone, credit_number,
-                credit_month, credit_year, credit_ccv, chrome_path):
+    def __init__(
+            self,
+            first_name,
+            last_name,
+            email,
+            address,
+            phone,
+            credit_number,
+            credit_month,
+            credit_year,
+            credit_ccv,
+            chrome_path,
+            product_uri=None
+    ):
         self.first_name = first_name 
         self.last_name = last_name 
         self.email = email 
@@ -15,17 +31,19 @@ class PS5Bot:
         self.credit_year = credit_year 
         self.credit_ccv = credit_ccv 
         self.driver = webdriver.Chrome(chrome_path)
-        self.driver.get('https://www.walmart.com/ip/PlayStation-5-Console/363472942')
+        if product_uri:
+            self.product_uri = product_uri
+        self.driver.get(self.product_uri)
 
-    def add_ps5_to_cart_and_checkout(self):
+    def add_item_to_cart_and_checkout(self):
         addToCart = '//*[@id="add-on-atc-container"]/div[1]/section/div[1]/div[3]/button/span/span'
         checkOut = ('//*[@id="cart-root-container-content-skip"]/div[1]/div/div[2]/div/div/div/div/'
         'div[3]/div/div/div[2]/div/div[2]/div/button[1]')
         continueWithoutAccount = ('/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[1]'
         '/div/div/div/div/div[3]/div/div[1]/div/section/section/div/button/span')
-        self.clickButton(addToCart)
-        self.clickButton(checkOut)
-        self.clickButton(continueWithoutAccount)
+        self.click_button(addToCart)
+        self.click_button(checkOut)
+        self.click_button(continueWithoutAccount)
 
     def filling_shipping_info(self):
         firstContinue = ('/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[2]/div/div[2]/'
@@ -37,13 +55,13 @@ class PS5Bot:
         phone = '//*[@id="phone"]'
         confirmInfo = ('/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[3]/div[1]/div[2]/'
         'div/div/div/div[3]/div/div/div/div/div/form/div[2]/div[2]/button/span')
-        self.clickButton(firstContinue)
-        self.enterData(firstName, self.first_name)
-        self.enterData(lastName, self.last_name)
-        self.enterData(phone, self.phone)
-        self.enterData(email, self.email)
-        self.enterData(address, self.address)
-        self.clickButton(confirmInfo)
+        self.click_button(firstContinue)
+        self.enter_data(firstName, self.first_name)
+        self.enter_data(lastName, self.last_name)
+        self.enter_data(phone, self.phone)
+        self.enter_data(email, self.email)
+        self.enter_data(address, self.address)
+        self.click_button(confirmInfo)
 
     def fill_out_payment_and_order(self):#FILLS OUT PAYMENT
         creditCardNum = '//*[@id="creditCard"]'
@@ -52,45 +70,53 @@ class PS5Bot:
         creditCVV = '//*[@id="cvv"]'
         reviewOrder = ('/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[4]/div[1]/div[2]/div/div'
         '/div/div[3]/div[2]/div/div/div/div[2]/div/div/div/form/div[3]/div/button/span/span/span')
-        self.enterData(creditCardNum, self.credit_number)
-        self.enterData(creditExpireMonth, self.credit_month)
-        self.enterData(creditExpireYear, self.credit_year)
-        self.enterData(creditCVV, self.credit_ccv)
-        self.clickButton(reviewOrder)
+        self.enter_data(creditCardNum, self.credit_number)
+        self.enter_data(creditExpireMonth, self.credit_month)
+        self.enter_data(creditExpireYear, self.credit_year)
+        self.enter_data(creditCVV, self.credit_ccv)
+        self.click_button(reviewOrder)
 
-    def clickButton(self, xpath):
+    def click_button(self, xpath):
         try:
             self.driver.find_element_by_xpath(xpath).click()
         except Exception:
             time.sleep(1)
-            self.clickButton(xpath)
+            self.click_button(xpath)
 
-    def enterData(self, field, data):
+    def enter_data(self, field, data):
         try:
             self.driver.find_element_by_xpath(field).send_keys(data)
             pass
         except Exception:
             time.sleep(1)
-            self.enterData(field, data)
+            self.enter_data(field, data)
+
+
+class PS5Bot(WebsiteBot):
+    product_uri = 'https://www.walmart.com/ip/PlayStation-5-Console/363472942'
+
+
+class DiaperBot(WebsiteBot):
+    product_uri = 'https://www.walmart.com/ip/Parent-s-Choice-Dry-and-Gentle-Baby-Diapers-Size-3-210-Count/999718413'
 
             
 if __name__ == "__main__":
-    personal_info = dict(
-        first_name = "John",
-        last_name = "Smith", 
-        email = "mail@gmail.com", 
-        address = "1234 Apple Lane", 
-        phone = "1234567890",
-        credit_number = "123456789",
-        credit_month = "00", 
-        credit_year = "25", 
-        credit_ccv = "123",
-        chrome_path = "C:/Users/Alex/Downloads/chromedriver_win32/chromedriver.exe" 
-    )
+    personal_info = {
+        'first_name': "John",
+        'last_name': "Smith",
+        'email': "mail@gmail.com",
+        'address': "1234 Apple Lane",
+        'phone': "1234567890",
+        'credit_number': "123456789",
+        'credit_month': "00",
+        'credit_year': "25",
+        'credit_ccv': "123",
+        'chrome_path': os.getenv('CHROME_PATH')
+    }
     
-    bot = PS5Bot(**personal_info)
-    bot.add_ps5_to_cart_and_checkout()
-    bot.filling_shipping_info()
-    bot.fill_out_payment_and_order()
+    bot = DiaperBot(**personal_info)
+    bot.add_item_to_cart_and_checkout()
+    # bot.filling_shipping_info()
+    # bot.fill_out_payment_and_order()
     # You can add those methods in the __init__ as well
 
