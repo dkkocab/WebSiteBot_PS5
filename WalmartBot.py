@@ -168,6 +168,7 @@ class WalmartBot:
         self.check_for_captcha()
         try:
             button = self.driver.find_element(by, value)
+            time.sleep(1)
             button.click()
         except NoSuchElementException:
             logger.debug('Waiting for element to be available')
@@ -175,7 +176,7 @@ class WalmartBot:
             if refresh:
                 logger.info('Refreshing page')
                 self.driver.refresh()
-            self.click_button(value, by)
+            self.click_button(value, by, timeout, refresh)
         except Exception:
             logger.exception('Encountered an error clicking button, '
                              'will retry in 1s')
@@ -242,7 +243,7 @@ if __name__ == "__main__":
     with open('personal_info.yml') as f:
         personal_info = yaml.safe_load(f)
     
-    bot = PS5Bot(**personal_info)
+    bot = DiaperBot(**personal_info)
     bot.add_item_to_cart_and_checkout()
     bot.fill_shipping_info()
     bot.fill_out_payment_and_order()
