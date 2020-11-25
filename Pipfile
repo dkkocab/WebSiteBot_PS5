@@ -4,9 +4,11 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+ipython = "*"
 
 [packages]
 selenium = "*"
+pyyaml = "*"
 
 [requires]
 python_version = "3.8"
