@@ -13,7 +13,7 @@ DATE_FORMAT = '%Y-%m-%dT%H:%M:%S'
 logger = logging.getLogger(__name__)
 
 
-class WebsiteBot:
+class WalmartBot:
     
     def __init__(
             self,
@@ -26,19 +26,27 @@ class WebsiteBot:
             credit_month,
             credit_year,
             credit_ccv,
-            chrome_path_var,
+            chrome_path=None,
+            chrome_path_var=None,
             product_uri=None
     ):
-        self.first_name = first_name 
-        self.last_name = last_name 
-        self.email = email 
-        self.address = address 
-        self.phone = phone 
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.address = address
+        self.phone = phone
         self.credit_number = credit_number
-        self.credit_month = credit_month 
-        self.credit_year = credit_year 
-        self.credit_ccv = credit_ccv 
-        self.driver = webdriver.Chrome(os.getenv(chrome_path_var))
+        self.credit_month = credit_month
+        self.credit_year = credit_year
+        self.credit_ccv = credit_ccv
+
+        if chrome_path:
+            self.chrome_path = chrome_path
+        elif chrome_path_var:
+            self.driver = webdriver.Chrome(os.getenv(chrome_path_var))
+        else:
+            raise RuntimeError('Selenium Chrome driver path not set')
+
         if product_uri:
             self.product_uri = product_uri
         self.driver.get(self.product_uri)
@@ -143,11 +151,11 @@ class WebsiteBot:
         return captcha
 
 
-class PS5Bot(WebsiteBot):
+class PS5Bot(WalmartBot):
     product_uri = 'https://www.walmart.com/ip/PlayStation-5-Console/363472942'
 
 
-class DiaperBot(WebsiteBot):
+class DiaperBot(WalmartBot):
     product_uri = 'https://www.walmart.com/ip/' \
                   'Parent-s-Choice-Dry-and-Gentle-Baby-Diapers-Size-3-210-Count' \
                   '/999718413'
