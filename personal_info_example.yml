@@ -1,0 +1,12 @@
+## This is a sample file, copy it to personal_info.yml and replace with your info
+address: 1234 Apple Lane
+# You need to set this environment variable in your shell or IDE
+chrome_path_var: CHROME_PATH
+credit_ccv: '123'
+credit_month: '00'
+credit_number: '123456789'
+credit_year: '25'
+email: mail@gmail.com
+first_name: John
+last_name: Smith
+phone: '1234567890'

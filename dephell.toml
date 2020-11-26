@@ -1,0 +1,4 @@
+[tool.dephell.main]
+from = { format = "pipfile", path = "Pipfile.lock" }
+envs = ["main"]
+to = { format = "pip", path = "requirements.txt" }
