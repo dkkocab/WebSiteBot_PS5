@@ -1,4 +1,5 @@
 from selenium import webdriver
+from os import getcwd
 import time
 
 class PS5Bot:
@@ -75,6 +76,7 @@ class PS5Bot:
 
             
 if __name__ == "__main__":
+    
     personal_info = dict(
         first_name = "John",
         last_name = "Smith", 
@@ -85,7 +87,7 @@ if __name__ == "__main__":
         credit_month = "00", 
         credit_year = "25", 
         credit_ccv = "123",
-        chrome_path = "C:/Users/Alex/Downloads/chromedriver_win32/chromedriver.exe" 
+        chrome_path = getcwd()+'\chromedriver.exe'
     )
     
     bot = PS5Bot(**personal_info)
