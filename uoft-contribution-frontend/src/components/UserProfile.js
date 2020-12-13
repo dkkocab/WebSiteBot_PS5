@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Container from "@material-ui/core/Container";
-import { FormControl, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select } from '@material-ui/core';
+import { FormControl, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Button } from '@material-ui/core';
 
 class UserProfile extends Component {
     constructor(props) {
@@ -15,6 +15,7 @@ class UserProfile extends Component {
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.SaveContent = this.saveContent.bind(this);
     }
 
     handleInputChange(event) {
@@ -26,6 +27,11 @@ class UserProfile extends Component {
         });
         console.log(this.state)
     }
+
+    saveContent() {
+        console.log('save');
+
+    }
     render() {
         const mystyle = {
             color: "white",
@@ -33,6 +39,7 @@ class UserProfile extends Component {
             padding: "10px",
             fontFamily: "Arial"
         };
+
         return (
             <Container maxWidth="md">
                 <React.Fragment>
@@ -148,7 +155,12 @@ class UserProfile extends Component {
                                 fullWidth
                                 autoComplete="shipping country"
                             />
+
                         </Grid>
+                        <Grid Grid item xs={12} >
+                            <Button variant="outlined" onClick={this.saveContent}>SAVE</Button>
+                        </Grid>
+
                         {/* <Grid item xs={12}>
                             <FormControlLabel
                                 control={<Checkbox color="secondary" name="saveAddress" value="yes" />}
