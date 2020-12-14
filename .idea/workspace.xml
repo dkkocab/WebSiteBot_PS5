@@ -25,7 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69b02db9-b4d1-47f5-8f4b-763bf7d16a2d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/uoft-contribution-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/uoft-contribution-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +48,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -79,6 +85,8 @@
       <workItem from="1606791710355" duration="431000" />
       <workItem from="1606792573048" duration="1032000" />
       <workItem from="1607382475768" duration="171000" />
+      <workItem from="1607441847094" duration="225000" />
+      <workItem from="1607871751395" duration="420000" />
     </task>
     <servers />
   </component>
@@ -102,21 +110,25 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="634" y="314" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606792990140" />
-    <state width="1771" height="318" key="GridCell.Tab.0.bottom" timestamp="1606793639591">
+    <state width="1771" height="318" key="GridCell.Tab.0.bottom" timestamp="1607442029240">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1606793639591" />
-    <state width="1771" height="318" key="GridCell.Tab.0.center" timestamp="1606793639590">
+    <state width="1771" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1607442029240" />
+    <state width="1771" height="318" key="GridCell.Tab.0.center" timestamp="1607442029239">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1606793639590" />
-    <state width="1771" height="318" key="GridCell.Tab.0.left" timestamp="1606793639590">
+    <state width="1771" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1607442029239" />
+    <state width="1771" height="318" key="GridCell.Tab.0.left" timestamp="1607442029239">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1606793639590" />
-    <state width="1771" height="318" key="GridCell.Tab.0.right" timestamp="1606793639591">
+    <state width="1771" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1607442029239" />
+    <state width="1771" height="318" key="GridCell.Tab.0.right" timestamp="1607442029239">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1771" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1606793639591" />
+    <state width="1771" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1607442029239" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1607389780346">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1607389780346" />
   </component>
 </project>
