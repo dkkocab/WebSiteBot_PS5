@@ -68,7 +68,6 @@ class Payment extends Component {
     }
 
     saveContent=()=> {
-
         console.log('save');
     }
 
