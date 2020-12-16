@@ -5,7 +5,8 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Container from "@material-ui/core/Container";
-import { FormControl, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Button } from '@material-ui/core';
+import { FormControl, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Button } from '@material-ui/core'
+import { Link } from 'react-router-dom';
 
 class UserProfile extends Component {
     constructor(props) {
@@ -28,9 +29,9 @@ class UserProfile extends Component {
         console.log(this.state)
     }
 
-    saveContent() {
-        console.log('save');
+    saveContent=()=> {
 
+        console.log('save');
     }
     render() {
         const mystyle = {
@@ -65,8 +66,10 @@ class UserProfile extends Component {
                                 id="lastName"
                                 name="lastName"
                                 label="Last name"
+                                onChange={this.handleInputChange}
                                 fullWidth
                                 autoComplete="family-name"
+                                value={this.state.lastName}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -76,7 +79,10 @@ class UserProfile extends Component {
                                 id="name"
                                 label="Email Address"
                                 type="email"
+                                name="email"
+                                value={this.state.email}
                                 fullWidth
+                                onChange={this.handleInputChange}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -95,6 +101,7 @@ class UserProfile extends Component {
                                 fullWidth
                                 id="date"
                                 label="Birthday"
+                                name="birthday"
                                 type="date"
                                 defaultValue=""
                                 onChange={this.handleInputChange}
@@ -111,7 +118,9 @@ class UserProfile extends Component {
                                 name="address1"
                                 label="Address line 1"
                                 fullWidth
+                                value={this.state.address1}
                                 autoComplete="shipping address-line1"
+                                onChange={this.handleInputChange}
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -121,6 +130,8 @@ class UserProfile extends Component {
                                 label="Address line 2"
                                 fullWidth
                                 autoComplete="shipping address-line2"
+                                onChange={this.handleInputChange}
+                                value={this.state.address2}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -131,10 +142,15 @@ class UserProfile extends Component {
                                 label="City"
                                 fullWidth
                                 autoComplete="shipping address-level2"
+                                onChange={this.handleInputChange}
+                                value={this.state.city}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField id="state" name="state" label="State/Province/Region" fullWidth />
+                            <TextField id="state" name="state" label="State/Province/Region" fullWidth
+                                       onChange={this.handleInputChange}
+                                       value={this.state.state}/>
+
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
@@ -144,6 +160,8 @@ class UserProfile extends Component {
                                 label="Zip / Postal code"
                                 fullWidth
                                 autoComplete="shipping postal-code"
+                                onChange={this.handleInputChange}
+                                value={this.state.zip}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -154,11 +172,16 @@ class UserProfile extends Component {
                                 label="Country"
                                 fullWidth
                                 autoComplete="shipping country"
+                                onChange={this.handleInputChange}
+                                value={this.state.country}
                             />
 
                         </Grid>
                         <Grid Grid item xs={12} >
-                            <Button variant="outlined" onClick={this.saveContent}>SAVE</Button>
+                            <Link to="/payment" className="btn btn-primary">
+                                SAVE
+                            </Link>
+
                         </Grid>
 
                         {/* <Grid item xs={12}>
