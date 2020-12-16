@@ -9,6 +9,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "@stripe/stripe-js": "^1.11.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -21,6 +22,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "^4.0.0",
     "react-stripe-checkout": "^2.6.3",
+    "react-stripe-elements": "^6.1.2",
+    "react-stripe-script-loader": "^1.1.1",
     "react-test-renderer": "^17.0.1"
   },
   "scripts": {
@@ -45,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@stripe/react-stripe-js": "^1.1.2",
     "axios": "^0.20.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",

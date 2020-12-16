@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from "./Home";
 import UserProfile from "./UserProfile";
 import Payment from "./Payment";
+import CheckoutForm from "./PaymentPage";
 
 
 class Main extends Component {

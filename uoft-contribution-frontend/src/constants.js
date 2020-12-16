@@ -5,3 +5,5 @@ export const STRIPE_KEY = 'pk_test_51HyPmrJZ0NU6vBrrqSFDwxSHWo9cxQ6X49nlRisUWMbN
 export const URL = ""
 export const ID = 'ID';
 export const PASSWORD = 'PASSWORD';
+export const ITEM_PRICE = 'ITEM_PRICE';
+export const ITEM_NAME = 'ITEM_NAME';
