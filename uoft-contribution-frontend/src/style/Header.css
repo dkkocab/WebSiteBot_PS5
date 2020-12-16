@@ -1,0 +1,38 @@
+.app-header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.app-header .logo {
+    margin-left: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(61, 61, 61);
+}
+
+.app-header .logo:hover {
+    text-decoration: none;
+}
+
+.app-header .DropDown{
+    position: absolute;
+    right: 20px;
+
+}
+
+.app-header .avatar {
+    position: relative;
+    right: 0px;
+    height: 40px;
+    width: 40px;
+}
+
+.app-header .avatar-LoggedIn {
+    position: relative;
+    right: 0px;
+    height: 40px;
+    width: 40px;
+    fill: #0275d8;
+}

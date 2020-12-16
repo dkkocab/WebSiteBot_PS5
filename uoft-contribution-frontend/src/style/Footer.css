@@ -1,0 +1,9 @@
+.footer {
+    position: absolute;
+    font-size: 20px;
+    bottom: 0;
+    align-content: center;
+    horiz-align: center;
+    margin-left: 40%;
+    margin-top: 10px;
+}

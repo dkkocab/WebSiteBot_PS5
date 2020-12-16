@@ -1,0 +1,2 @@
+--require airbnb-browser-shims
+--reporter spec
