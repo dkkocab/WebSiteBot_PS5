@@ -8,6 +8,7 @@ import {STRIPE_KEY} from "../constants";
 const stripePromise = loadStripe(STRIPE_KEY);
 
 const PaymentPage = () => {
+
     return (
         <div className="App">
             <div className="product">
