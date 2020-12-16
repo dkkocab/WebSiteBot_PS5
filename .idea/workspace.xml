@@ -25,12 +25,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69b02db9-b4d1-47f5-8f4b-763bf7d16a2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/uoft-contribution-frontend/src/components/Payment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uoft-contribution-frontend/src/style/Payment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uoft-contribution-frontend/src/components/CardSection.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uoft-contribution-frontend/src/components/CheckoutForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uoft-contribution-frontend/src/components/PaymentPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uoft-contribution-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/uoft-contribution-frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uoft-contribution-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/uoft-contribution-frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uoft-contribution-frontend/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/uoft-contribution-frontend/src/components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uoft-contribution-frontend/src/components/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/uoft-contribution-frontend/src/components/Payment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uoft-contribution-frontend/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/uoft-contribution-frontend/src/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +72,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -102,7 +105,7 @@
       <workItem from="1607382475768" duration="171000" />
       <workItem from="1607441847094" duration="225000" />
       <workItem from="1607871751395" duration="420000" />
-      <workItem from="1607984878811" duration="1048000" />
+      <workItem from="1607984878811" duration="6143000" />
     </task>
     <servers />
   </component>
@@ -122,10 +125,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="634" y="314" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606792990140">
+    <state x="634" y="314" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608131907493">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="634" y="314" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606792990140" />
+    <state x="634" y="314" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1608131907493" />
     <state width="1771" height="318" key="GridCell.Tab.0.bottom" timestamp="1607442029240">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
