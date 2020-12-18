@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from "./Home";
 import UserProfile from "./UserProfile";
 import Payment from "./Payment";
-import CheckoutForm from "./PaymentPage";
+import Supplier from "./Supplier";
 
 
 class Main extends Component {
@@ -23,6 +23,10 @@ class Main extends Component {
 
                     <Route exact path="/payment">
                         <Payment />
+                    </Route>
+
+                    <Route exact path="/suppliers">
+                        <Supplier />
                     </Route>
 
 
