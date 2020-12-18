@@ -10,7 +10,7 @@ import {
     KeyboardDatePicker,
 } from '@material-ui/pickers';
 
-import {ITEM_PRICE, ITEM_NAME} from "../constants";
+import {ITEM_PRICE, ITEM_NAME, SUPPLIER} from "../constants";
 
 class Payment extends Component {
     // onToken = (token, addresses) => {
@@ -92,8 +92,8 @@ class Payment extends Component {
                                 required
                                 id="Item_Price"
                                 name="Item_Price"
-                                label="Item_Price $"
-                                value= {ITEM_PRICE}
+                                label="Console Price $"
+                                value= {localStorage.getItem(ITEM_PRICE)}
 
                                 fullWidth
                             />
@@ -104,8 +104,19 @@ class Payment extends Component {
                                 required
                                 id="Item_Name"
                                 name="Item_Name"
-                                label="Item_Name"
-                                value={ITEM_NAME}
+                                label="Console Name"
+                                value={localStorage.getItem(ITEM_NAME)}
+                                fullWidth
+                            />
+                        </Grid>
+
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                required
+                                id="Supplier_Name"
+                                name="Supplier_Name"
+                                label="Supplier Name"
+                                value={localStorage.getItem(SUPPLIER)}
                                 fullWidth
                             />
                         </Grid>
@@ -115,7 +126,7 @@ class Payment extends Component {
                                 required
                                 id="CardNumber"
                                 name="CardNumber"
-                                label="CardNumber"
+                                label="Card Number"
                                 value={this.state.CardNumber}
                                 onChange={this.handleInputChange}
                                 fullWidth
@@ -127,7 +138,7 @@ class Payment extends Component {
                                 required
                                 id="CVVnumber"
                                 name="CVVnumber"
-                                label="CVV number"
+                                label="CVV Number"
                                 onChange={this.handleInputChange}
                                 fullWidth
                                 autoComplete="family-name"
@@ -139,7 +150,7 @@ class Payment extends Component {
                             <TextField
                                 fullWidth
                                 id="ExpireDate"
-                                label="ExpireDate"
+                                label="Expire Date"
                                 name="ExpireDate"
                                 type="date"
                                 defaultValue=""

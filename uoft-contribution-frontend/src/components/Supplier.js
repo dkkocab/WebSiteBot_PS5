@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container'
 
 class Supplier extends Component {
     handleClick(name){
-        window.location.href="/payment"
+        window.location.href="/userprofile"
         localStorage.setItem("supplier",name)
         // For now we store the supplier that users chose in the local cache, with the key as "supplier"
         // When the user clicks on a supplier, the name of that supplier will be passed into here.

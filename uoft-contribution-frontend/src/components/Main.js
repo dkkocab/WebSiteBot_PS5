@@ -17,7 +17,7 @@ class Main extends Component {
                         <Home />
                     </Route>
                     
-                    <Route exact path="/UserProfile">
+                    <Route exact path="/userprofile">
                         <UserProfile />
                     </Route>
 

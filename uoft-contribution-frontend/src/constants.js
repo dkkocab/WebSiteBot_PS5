@@ -6,4 +6,5 @@ export const URL = ""
 export const ID = 'ID';
 export const PASSWORD = 'PASSWORD';
 export const ITEM_PRICE = 'ITEM_PRICE';
-export const ITEM_NAME = 'ITEM_NAME';
+export const ITEM_NAME = 'console';
+export const SUPPLIER = 'supplier';
