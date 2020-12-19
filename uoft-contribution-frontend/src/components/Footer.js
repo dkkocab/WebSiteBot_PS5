@@ -7,7 +7,7 @@ class Footer extends Component {
         
         return (
             <div className="footer">
-                &copy; Copyright {year}, Footer
+                &copy; Copyright {year}, WebSiteBot
             </div>
         );
     
