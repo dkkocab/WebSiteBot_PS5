@@ -1,0 +1,24 @@
+.main {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    min-height: 80%;
+}
+
+.main .spinner {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.main .block {
+    margin-top: 10px;
+}

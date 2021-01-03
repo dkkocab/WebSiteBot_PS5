@@ -1,0 +1,21 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "root": true,
+  "overrides": [
+    {
+      "files": ["src/createMountWrapper.*"],
+      "rules": {
+        "no-underscore-dangle": 0,
+      },
+    },
+  ],
+  "rules": {
+    "max-len": 0,
+  },
+  "settings": {
+    "react": {
+      "version": "detect",
+    },
+  },
+}
