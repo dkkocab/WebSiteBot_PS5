@@ -11,19 +11,27 @@ def order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNu
     username = '//*[@id="sign-in-email"]'
     password = '/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[1]/div/div/div/div/div[3]/div/div[4]/div/section/div/section/form/div[2]/div/div[1]/label/div[2]/div/input'
     continueWithAccount = '/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[1]/div/div/div/div/div[3]/div/div[4]/div/section/div/section/form/div[5]/button/span'
-    firstContinue = '/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[2]/div/div[2]/div/div/div/div[3]/div/div/div[2]/button/span'
-    firstName ='//*[@id="firstName"]'
-    lastName = '//*[@id="lastName"]'
-    email = '//*[@id="email"]'
-    address = '//*[@id="addressLineOne"]'
-    phone = '//*[@id="phone"]'
-    confirmInfo = '/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[3]/div[1]/div[2]/div/div/div/div[3]/div/div/div/div/div/form/div[2]/div[2]/button/span'
+    #firstContinue = '/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[2]/div/div[2]/div/div/div/div[3]/div/div/div[2]/button/span'
+    #firstName ='//*[@id="firstName"]'
+    #lastName = '//*[@id="lastName"]'
+    #email = '//*[@id="email"]'
+    #address = '//*[@id="addressLineOne"]'
+    #phone = '//*[@id="phone"]'
+    #confirmInfo = '/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[3]/div[1]/div[2]/div/div/div/div[3]/div/div/div/div/div/form/div[2]/div[2]/button/span'
     creditCardNum = '//*[@id="creditCard"]'
     creditExpireMonth = '//*[@id="month-chooser"]'
     creditExpireYear = '//*[@id="year-chooser"]'
     creditCVV = '//*[@id="cvv"]'
     reviewOrder = '/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[4]/div[1]/div[2]/div/div/div/div[3]/div[2]/div/div/div/div[2]/div/div/div/form/div[3]/div/button/span/span/span'
     confirmOrder = '/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div[2]/div[1]/div[2]/div/div/div[2]/div/form/div/button'
+    #IN STORE PICK-UP VARIABLES
+    IDFirstName = '''/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[3]/div[1]/div[2]/div/div/div/form/div/div[1]/div/div/div/div[2]/div[1]/input'''
+    IDLastName = '''/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[3]/div[1]/div[2]/div/div/div/form/div/div[1]/div/div/div/div[2]/div[2]/input'''
+    IDEmailAddy = '''/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[3]/div[1]/div[2]/div/div/div/form/div/div[1]/div/div/div/div[2]/div[3]/input'''
+    MobileForNotify = '''/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[3]/div[1]/div[2]/div/div/div/form/div/div[1]/div/div/div/div[2]/div[4]/div[1]/input'''
+    PickupCont = '''/html/body/div[1]/div/div[1]/div/div[1]/div[3]/div/div/div/div[3]/div[1]/div[2]/div/div/div/form/div/div[3]/div/div/button/span'''
+
+    
     
     #ADDS PS5 TO CART AND GOES TO CHECKOUT
     clickAddToCartButton(addToCart, driver)
@@ -35,14 +43,21 @@ def order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNu
     clickButton(continueWithAccount, driver)
     time.sleep(1)
 
-    #FILLS OUT SHIPPING INFO
+    '''#FILLS OUT SHIPPING INFO
     clickButton(firstContinue, driver)
     enterData(firstName, myFirstName.get(), driver)
     enterData(lastName, myLastName.get(), driver)
     enterData(phone, myPhone.get(), driver)
     enterData(email, myEmail.get(), driver)
     enterData(address, myAddress.get(), driver)
-    clickButton(confirmInfo, driver)
+    clickButton(confirmInfo, driver)'''
+
+    #FILLS OUT PICK-UP INFO
+    enterData(IDFirstName, myFirstName.get(), driver)
+    enterData(IDLastName, myLastName.get(), driver)
+    enterData(IDEmailAddy, myEmail.get(), driver)
+    enterData(MobileForNotify, myPhone.get(), driver)
+    clickButton(PickupCont, driver)
 
     #FILLS OUT PAYMENT
     enterData(creditCardNum, myCreditCardNum.get(), driver)
@@ -51,8 +66,8 @@ def order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNu
     enterData(creditCVV, myCVV.get(), driver)
 
     #ORDER
-    clickButton(reviewOrder)
-    clickButton(confirmOrder)
+    clickButton(reviewOrder, driver)
+    clickButton(confirmOrder, driver)
 
 def clickAddToCartButton(xpath,driver):
     try:
@@ -60,7 +75,7 @@ def clickAddToCartButton(xpath,driver):
         pass
     except Exception:
         time.sleep(5)
-        driver.refresh();
+        driver.refresh()
         clickAddToCartButton(xpath, driver)
 
 def clickButton(xpath ,driver):
@@ -99,7 +114,7 @@ def XboxX(myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCre
     if supplier == "Walmart":
         driver = webdriver.Chrome("C:/Users/Alex/Downloads/chromedriver_win32/chromedriver.exe")
         driver.get('https://www.walmart.com/ip/XB1-Xbox-Series-X/443574645')
-        order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, supplier, myUsername, myPassword)
+        order(driver,myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, myUsername, myPassword)
         root.mainloop()
 
 def XboxS(myFirstName,myLastName,myEmail,myAddress,myPhone,myCreditCardNum,myCreditExpireMonth,myCreditExpireYear,myCVV, supplier, myUsername, myPassword):
@@ -236,4 +251,3 @@ if __name__ == "__main__":
     ps5Start.grid(column = 25, row = 6)
     xboxStart.grid(column = 25, row = 8)
     root.mainloop()
-    
